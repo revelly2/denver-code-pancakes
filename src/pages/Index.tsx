@@ -17,11 +17,15 @@ import {
   Download,
   Star,
   Heart,
-  Sparkles
+  Sparkles,
+  MapPin,
+  Calendar,
+  Award
 } from "lucide-react";
 import pancakeMascot from "@/assets/pancake-mascot.png";
 import filmReel from "@/assets/film-reel.png";
 import heroBanner from "@/assets/hero-banner.png";
+import profilePicture from "@/assets/474080286_978919554137620_4488204250932360375_n.jpg";
 
 const Index = () => {
   const { toast } = useToast();
@@ -97,6 +101,18 @@ const Index = () => {
         </div>
         <div className="relative max-w-6xl mx-auto px-4 text-center">
           <div className="mb-8">
+            <div className="relative inline-block">
+              <img 
+                src={profilePicture} 
+                alt="Jay Denver Agdeppa" 
+                className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full shadow-pancake border-4 border-primary/20 object-cover"
+              />
+              <div className="absolute -bottom-2 -right-2 bg-primary rounded-full p-2">
+                <Sparkles className="w-4 h-4 text-primary-foreground" />
+              </div>
+            </div>
+          </div>
+          <div className="mb-8">
             <img 
               src={filmReel} 
               alt="Film reel" 
@@ -107,8 +123,22 @@ const Index = () => {
             Hi, I'm <span className="text-primary">Jay Denver</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-3xl mx-auto">
-            Serving code and creativity like warm pancakes 🥞
+            IT Student & Web Developer serving code and creativity like warm pancakes 🥞
           </p>
+          <div className="flex flex-wrap justify-center gap-4 mb-8 text-sm text-muted-foreground">
+            <div className="flex items-center gap-1">
+              <MapPin className="w-4 h-4" />
+              <span>Philippines</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Calendar className="w-4 h-4" />
+              <span>Available for Projects</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Award className="w-4 h-4" />
+              <span>IT Student</span>
+            </div>
+          </div>
           <div className="flex gap-4 justify-center">
             <Button size="lg" className="gradient-pancake shadow-pancake hover:shadow-fluffy transition-all">
               <Sparkles className="mr-2 h-5 w-5" />
@@ -132,6 +162,17 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Card className="p-8 shadow-fluffy border-primary/20">
+                <div className="flex items-center gap-3 mb-6">
+                  <img 
+                    src={profilePicture} 
+                    alt="Jay Denver" 
+                    className="w-16 h-16 rounded-full border-2 border-primary/30 object-cover"
+                  />
+                  <div>
+                    <h3 className="font-bold text-lg">Jay Denver Agdeppa</h3>
+                    <p className="text-sm text-muted-foreground">IT Student & Developer</p>
+                  </div>
+                </div>
                 <p className="text-lg mb-6 leading-relaxed">
                   I'm an IT student passionate about web development, design, and digital storytelling. 
                   Like crafting the perfect pancake, I believe great code comes from the right mix of 
@@ -141,17 +182,40 @@ const Index = () => {
                   When I'm not coding, you can find me exploring the latest web technologies, 
                   watching classic films for inspiration, or experimenting with new breakfast recipes! 🍳
                 </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                    <Code className="w-3 h-3 mr-1" />
+                    Web Developer
+                  </Badge>
+                  <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                    <Film className="w-3 h-3 mr-1" />
+                    Creative
+                  </Badge>
+                  <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                    <Coffee className="w-3 h-3 mr-1" />
+                    Pancake Enthusiast
+                  </Badge>
+                </div>
               </Card>
             </div>
             <div className="text-center">
               <div className="relative inline-block">
                 <img 
-                  src={pancakeMascot} 
-                  alt="Jay Denver" 
-                  className="w-64 h-64 mx-auto float-animation shadow-pancake rounded-full"
+                  src={profilePicture} 
+                  alt="Jay Denver Agdeppa" 
+                  className="w-64 h-64 mx-auto float-animation shadow-pancake rounded-full object-cover border-4 border-primary/20"
                 />
                 <div className="absolute -top-4 -right-4">
                   <Film className="w-8 h-8 text-primary bounce-gentle" />
+                </div>
+                <div className="absolute -bottom-4 -left-4">
+                  <Code className="w-8 h-8 text-primary bounce-gentle" />
+                </div>
+                <div className="absolute top-1/2 -left-8 transform -translate-y-1/2">
+                  <Palette className="w-6 h-6 text-primary/60 float-animation" />
+                </div>
+                <div className="absolute top-1/2 -right-8 transform -translate-y-1/2">
+                  <Database className="w-6 h-6 text-primary/60 float-animation" style={{animationDelay: '2s'}} />
                 </div>
               </div>
             </div>
@@ -169,7 +233,7 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="group hover:shadow-pancake transition-all duration-300 hover:-translate-y-2 border-primary/20">
+              <Card key={index} className="project-card group hover:shadow-pancake transition-all duration-300 border-primary/20 hover:border-primary/40">
                 <div className="p-6">
                   <div className="text-6xl mb-4 text-center">{project.image}</div>
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
@@ -199,7 +263,7 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {skills.map((skill, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-fluffy transition-all border-primary/20">
+              <Card key={index} className="skill-card p-6 text-center hover:shadow-fluffy transition-all duration-300 border-primary/20 hover:border-primary/40">
                 <skill.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
                 <h3 className="text-lg font-semibold mb-2">{skill.name}</h3>
                 <div className="w-full bg-secondary rounded-full h-2 mb-2">
@@ -241,9 +305,9 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="text-center">
               <img 
-                src={pancakeMascot} 
+                src={profilePicture} 
                 alt="Contact mascot" 
-                className="w-32 h-32 mx-auto mb-6 float-animation"
+                className="w-32 h-32 mx-auto mb-6 float-animation rounded-full shadow-fluffy border-2 border-primary/20 object-cover"
               />
               <p className="text-lg mb-6">
                 Ready to cook up something amazing together? Drop me a line!

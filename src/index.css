@@ -153,6 +153,23 @@ All colors MUST be HSL.
   .bounce-gentle {
     animation: bounceGentle 4s ease-in-out infinite;
   }
+  
+  .profile-glow {
+    box-shadow: 0 0 30px rgba(255, 193, 7, 0.3);
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .floating-icons {
+    animation: floatSlow 8s ease-in-out infinite;
+  }
 }
 
 @keyframes float {
@@ -164,4 +181,19 @@ All colors MUST be HSL.
   0%, 100% { transform: translateY(0px); }
   25% { transform: translateY(-10px); }
   75% { transform: translateY(-5px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(5deg); }
+  66% { transform: translateY(-8px) rotate(-3deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
 }
