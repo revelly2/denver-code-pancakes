@@ -55,22 +55,25 @@ const Index = () => {
 
   const projects = [
     {
-      title: "CineQueue",
-      description: "A movie discovery app with queue management",
-      image: "🎬",
-      tech: ["React", "API", "CSS"]
+      title: "School Management System",
+      description: "Comprehensive school management platform for students and administrators",
+      image: "🏫",
+      tech: ["React", "Node.js", "Database"],
+      demoUrl: "https://campuh.vercel.app/"
     },
     {
-      title: "Pancode",
-      description: "Recipe-sharing web application",
-      image: "🥞",
-      tech: ["HTML", "CSS", "JavaScript"]
+      title: "Todo List",
+      description: "Modern task management application with intuitive interface",
+      image: "✅",
+      tech: ["React", "CSS", "JavaScript"],
+      demoUrl: "https://pancake-cinema-tasks.vercel.app/"
     },
     {
-      title: "BrightCast",
-      description: "Modern podcast listening interface",
-      image: "🎧",
-      tech: ["React", "Node.js", "MongoDB"]
+      title: "Calculator",
+      description: "Feature-rich calculator with advanced mathematical operations",
+      image: "🧮",
+      tech: ["JavaScript", "CSS", "HTML"],
+      demoUrl: "https://buttery-math-stack.vercel.app/"
     }
   ];
 
@@ -247,6 +250,13 @@ const Index = () => {
                       </Badge>
                     ))}
                   </div>
+                  <Button 
+                    className="w-full gradient-pancake shadow-fluffy hover:shadow-pancake transition-all"
+                    onClick={() => window.open(project.demoUrl, '_blank')}
+                  >
+                    <Star className="mr-2 h-4 w-4" />
+                    View Demo
+                  </Button>
                 </div>
               </Card>
             ))}
