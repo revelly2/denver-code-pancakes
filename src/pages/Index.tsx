@@ -74,6 +74,27 @@ const Index = () => {
       image: "🧮",
       tech: ["JavaScript", "CSS", "HTML"],
       demoUrl: "https://buttery-math-stack.vercel.app/"
+    },
+    {
+      title: "Loop",
+      description: "Interactive loop visualization and learning platform",
+      image: "🔄",
+      tech: ["JavaScript", "CSS", "HTML"],
+      demoUrl: "https://loop-umber.vercel.app/"
+    },
+    {
+      title: "Array",
+      description: "Array manipulation and visualization tool for developers",
+      image: "📊",
+      tech: ["JavaScript", "React", "CSS"],
+      demoUrl: "https://mrvn-array.vercel.app/"
+    },
+    {
+      title: "Converter",
+      description: "Multi-purpose conversion utility for various data types",
+      image: "🔄",
+      tech: ["JavaScript", "HTML", "CSS"],
+      demoUrl: "https://mrvn-converter.vercel.app/"
     }
   ];
 
